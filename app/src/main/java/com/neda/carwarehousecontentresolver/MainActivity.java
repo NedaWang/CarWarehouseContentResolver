@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     Button insertButton;
     ListView listView;
 
+    final String uriString = "content://ContentProviderWithHelper/cars";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 values.put("color","red");
                 values.put("seats",4);
                 values.put("year","2020");
-                Uri uri= Uri.parse("content://ContentProviderWithHelper/cars");
+                Uri uri= Uri.parse(uriString);
                 getContentResolver().insert(uri,values);
             }
         });
